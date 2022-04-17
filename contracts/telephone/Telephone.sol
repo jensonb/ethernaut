@@ -22,7 +22,7 @@ contract TelephoneAttack {
     address private _owner;
 
     modifier onlyOwner() {
-        require(msg.sender == _owner, "unauthorized");
+        require(msg.sender == _owner, 'unauthorized');
         _;
     }
 
@@ -30,9 +30,12 @@ contract TelephoneAttack {
         _owner = msg.sender;
     }
 
-    function execute(address target, bytes calldata message) external onlyOwner {
+    function execute(address target, bytes calldata message)
+        external
+        onlyOwner
+    {
         // solhint-disable avoid-low-level-calls
         (bool success, ) = target.call(message);
-        require(success, "failed");
+        require(success, 'failed');
     }
 }

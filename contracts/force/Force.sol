@@ -16,8 +16,8 @@ contract Force {
 
 contract ForceAttack {
     function execute(address payable target) external payable {
-        require(target != address(0), "bad target");
-        require(msg.value > 0, "need eth");
+        require(target != address(0), 'bad target');
+        require(msg.value > 0, 'need eth');
         selfdestruct(target);
     }
 }

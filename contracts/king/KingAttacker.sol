@@ -12,6 +12,7 @@ contract KingAttacker {
         internal
         returns (bool sent)
     {
+        // solhint-disable avoid-low-level-calls
         (sent, ) = to.call{ value: amount }('');
     }
 }

@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
+/* solhint-disable */
 contract King {
     address payable king;
     uint256 public prize;
