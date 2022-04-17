@@ -4,6 +4,7 @@ import type { Fixture } from 'ethereum-waffle';
 import {
   Elevator,
   ElevatorAttacker,
+  GatekeeperOne,
   King,
   KingAttacker,
   Reentrance,
@@ -23,6 +24,9 @@ declare module 'mocha' {
     // 11 Elevator
     elevator: Elevator;
     elevatorAttacker: ElevatorAttacker;
+
+    // 13 Gatekeeper One
+    gatekeeperOne: GatekeeperOne;
 
     loadFixture: <T>(fixture: Fixture<T>) => Promise<T>;
     signers: Signers;
