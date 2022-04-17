@@ -2,6 +2,8 @@ import type { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signe
 import type { Fixture } from 'ethereum-waffle';
 
 import {
+  Elevator,
+  ElevatorAttacker,
   King,
   KingAttacker,
   Reentrance,
@@ -17,6 +19,10 @@ declare module 'mocha' {
     // 10 Re-entrancy
     reentrance: Reentrance;
     reentranceAttacker: ReentranceAttacker;
+
+    // 11 Elevator
+    elevator: Elevator;
+    elevatorAttacker: ElevatorAttacker;
 
     loadFixture: <T>(fixture: Fixture<T>) => Promise<T>;
     signers: Signers;

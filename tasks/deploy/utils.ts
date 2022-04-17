@@ -54,3 +54,15 @@ export const logBalance = async (
     )}`,
   );
 };
+
+export const testDeploy = async <T>(
+  { artifacts, waffle }: HardhatRuntimeEnvironment,
+  artifactName: string,
+  signer: SignerWithAddress,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  args: any[] = [],
+): Promise<T> => {
+  const artifact = await artifacts.readArtifact(artifactName);
+  const contract = await waffle.deployContract(signer, artifact, args);
+  return contract as unknown as T;
+};

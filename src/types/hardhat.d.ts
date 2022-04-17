@@ -13,6 +13,22 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
+      name: "Building",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Building__factory>;
+    getContractFactory(
+      name: "Elevator",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Elevator__factory>;
+    getContractFactory(
+      name: "ElevatorAttacker",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ElevatorAttacker__factory>;
+    getContractFactory(
+      name: "IElevator",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IElevator__factory>;
+    getContractFactory(
       name: "Ethernaut",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Ethernaut__factory>;
@@ -53,6 +69,26 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.TelephoneAttack__factory>;
 
+    getContractAt(
+      name: "Building",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Building>;
+    getContractAt(
+      name: "Elevator",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Elevator>;
+    getContractAt(
+      name: "ElevatorAttacker",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ElevatorAttacker>;
+    getContractAt(
+      name: "IElevator",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IElevator>;
     getContractAt(
       name: "Ethernaut",
       address: string,
