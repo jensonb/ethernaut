@@ -49,6 +49,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.KingAttacker__factory>;
     getContractFactory(
+      name: "Privacy",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Privacy__factory>;
+    getContractFactory(
       name: "Reentrance",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Reentrance__factory>;
@@ -114,6 +118,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.KingAttacker>;
+    getContractAt(
+      name: "Privacy",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Privacy>;
     getContractAt(
       name: "Reentrance",
       address: string,
